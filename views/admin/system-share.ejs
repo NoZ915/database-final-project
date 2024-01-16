@@ -1,0 +1,57 @@
+<%- include('../includes/head.ejs') %>
+  <link rel="stylesheet" href="/css/system.css">
+  </head>
+
+  <body>
+    <%- include('../includes/navigation.ejs') %>
+
+      <!--小標 -->
+      <div Class="smalltitle">首頁 > 發單系統 > 團購</div>
+
+      <main>
+        <div class="container">
+          <div class="drop-zone">
+            <span class="drop-zone__prompt">Drop file here or click to upload</span>
+            <input type="file" name="myFile" class="drop-zone__input">
+          </div>
+
+          <form action="/system-share" method="POST">
+            <input type="hidden" name="service" id="service" value="system-share">
+            <div>
+              <label for="imageUrl">商品圖片</label>
+              <input type="text" name="imageUrl" id="imageUrl">
+            </div>
+            <div>
+              <label for="title">商品名稱</label>
+              <input type="text" name="title" id="title">
+            </div>
+            <div>
+              <label for="website">商品網站</label>
+              <input type="text" name="website" id="website">
+            </div>
+            <div>
+              <label for="description">商品描述</label>
+              <input type="text" name="description" id="description">
+            </div>
+            <div>
+              <label for="deadline">截止日期 (年/月/日)</label>
+              <input type="text" name="deadline" id="deadline">
+            </div>
+            <div>
+              <label for="price">商品價格</label>
+              <input type="text" name="price" id="price">
+            </div>
+            <div>
+              <label for="targetQuantity">目標數量</label>
+              <input type="text" name="targetQuantity" id="targetQuantity">
+            </div>
+
+            <button class="btn" type="submit">發文</button>
+          </form>
+      </main>
+      </div>
+
+      <!-- <%- include('../includes/footer.ejs') %> -->
+  </body>
+
+  </html>

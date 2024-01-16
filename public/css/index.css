@@ -1,0 +1,47 @@
+/*index*/
+.content {
+  font-size: 20px;
+}
+
+.left-content {
+  float: left;
+  width: 50%;
+  background-color: #555555;
+  color: white;
+  padding: 20px 20px;
+  box-sizing: border-box;
+  height: 200px;
+}
+
+.right-content {
+  float: left;
+  box-sizing: border-box;
+  padding: 50px 20px 0;
+  width: 50%;
+  height: 200px;
+  background-color: #ffffff;
+
+  color: #000000;
+  font-size: 20px;
+}
+
+.right-content p {
+  color: gray;
+}
+
+/*回到最上面icon*/
+.up {
+  position: fixed;
+  right: 6%;
+  bottom: 10px;
+  z-index: 99;
+}
+
+#up-icon {
+  height: 60px;
+}
+
+/* 將.wrapper設定為flex-grow，使其填充剩餘的空間 */
+.wrapper {
+  flex-grow: 1;
+}

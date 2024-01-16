@@ -1,0 +1,72 @@
+.centered {
+  display: flex;
+  margin: 20px 50px;
+}
+
+.product__container {
+  margin: 0 auto;
+}
+
+.product__container>div {
+  display: inline-block;
+}
+
+.card__image {
+  width: 20rem;
+  max-width: 95%;
+  margin: 1rem;
+}
+
+.content__container {
+  text-align: left;
+}
+
+.big-title,
+.sub-title {
+  display: block;
+}
+
+.sub-title {
+  font-size: 16px;
+  color: rgb(161, 161, 161);
+  margin-bottom: 12px;
+}
+
+.big-title {
+  margin-bottom: 8px;
+  padding: 3px;
+  background-color: rgb(236, 236, 236);
+}
+
+/* input */
+input {
+  display: inline-block;
+  width: 100px;
+  height: 45px;
+  text-align: center;
+  font-size: 25px;
+  box-sizing: border-box;
+}
+
+/* button */
+form {
+  display: inline-block;
+}
+
+.btn {
+  display: inline-block;
+  height: 45px;
+  padding: 12px 24px;
+  font-size: 18px;
+  color: #ffffff;
+  background-color: #e74c3c;
+  border: none;
+  border-radius: 4px;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #c0392b;
+}
