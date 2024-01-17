@@ -1,5 +1,5 @@
 <%- include('../includes/head.ejs') %>
-  <link rel="stylesheet" href="/css/index.css">
+  <link rel="stylesheet" href="/css/all-system.css">
   </head>
 
   <body>
@@ -26,7 +26,51 @@
         </div>
 
         <div class="list__container">
+          <section>
+            <span>發布清單</span>
+            <div class="shop-content">
+              <% if (prods.length> 0 ) { %>
+                <% console.log(prods) %>
+                  <div class="grid">
+                    <% for (let product of prods) { %>
+                      <a href="/all-<%= product.productId.service %>/<%= product.productId._id.toString() %>"
+                        class="btn">
+                        <article class="card product-item">
+                          <header class="card__header">
+                            <h1 class="product__title">
+                              <%= product.productId.title %>
+                            </h1>
+                          </header>
+                          <div class="card__image">
+                            <% if(product.productId.platform){ %>
+                              <img src="/img/fee/<%= product.productId.platform %>.jpg"
+                                alt="<%= product.productId.title %>">
+                              <% }else{ %>
+                                <img src="<%= product.productId.imageUrl%>" alt="<%= product.productId.title %>">
+                                <% } %>
+                          </div>
 
+                          <div class="card__actions">
+                            <a href="/edit-product/<%=  product.productId._id.toString() %>?edit=true"
+                              class="btn">編輯</a>
+                            <form action="/delet-product">
+                              <button class="btn" type="submit">刪除</button>
+                              <input type="hidden" value="<%= product.productId._id.toString() %>" name="productId">
+                            </form>
+                          </div>
+
+                        </article>
+                      </a>
+                      <% } %>
+                  </div>
+                  <% } else { %>
+                    <h1>此使用者目前無商品上架！</h1>
+                    <% } %>
+            </div>
+          </section>
+          <section>
+            <span>訂單清單</span>
+          </section>
         </div>
       </main>
 

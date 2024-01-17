@@ -10,43 +10,50 @@
 
       <main>
         <div class="container">
-          <div class="drop-zone">
+          <!-- <div class="drop-zone">
             <span class="drop-zone__prompt">Drop file here or click to upload</span>
             <input type="file" name="myFile" class="drop-zone__input">
-          </div>
+          </div> -->
 
-          <form action="/system-share" method="POST">
-            <input type="hidden" name="service" id="service" value="system-share">
+          <form action="/<% if (editing) { %>edit-product/<%= product._id %><% } else { %>system-share<% } %>"
+            method="POST">
+            <input type="hidden" name="service" id="service" value="share">
             <div>
               <label for="imageUrl">商品圖片</label>
-              <input type="text" name="imageUrl" id="imageUrl">
+              <input type="text" name="imageUrl" id="imageUrl"
+                value="<% if (editing) { %><%= product.imageUrl %><% } %>">
             </div>
             <div>
               <label for="title">商品名稱</label>
-              <input type="text" name="title" id="title">
+              <input type="text" name="title" id="title" value="<% if (editing) { %><%= product.title %><% } %>">
             </div>
             <div>
               <label for="website">商品網站</label>
-              <input type="text" name="website" id="website">
+              <input type="text" name="website" id="website" value="<% if (editing) { %><%= product.website %><% } %>">
             </div>
             <div>
               <label for="description">商品描述</label>
-              <input type="text" name="description" id="description">
+              <input type="text" name="description" id="description"
+                value="<% if (editing) { %><%= product.description %><% } %>">
             </div>
             <div>
               <label for="deadline">截止日期 (年/月/日)</label>
-              <input type="text" name="deadline" id="deadline">
+              <input type="text" name="deadline" id="deadline"
+                value="<% if (editing) { %><%= product.deadline %><% } %>">
             </div>
             <div>
               <label for="price">商品價格</label>
-              <input type="text" name="price" id="price">
+              <input type="text" name="price" id="price" value="<% if (editing) { %><%= product.price %><% } %>">
             </div>
             <div>
               <label for="targetQuantity">目標數量</label>
-              <input type="text" name="targetQuantity" id="targetQuantity">
+              <input type="text" name="targetQuantity" id="targetQuantity"
+                value="<% if (editing) { %><%= product.targetQuantity %><% } %>">
             </div>
 
-            <button class="btn" type="submit">發文</button>
+            <button class="btn" type="submit">
+              <% if (editing) { %>更新<% } else { %>發文<% } %>
+            </button>
           </form>
       </main>
       </div>

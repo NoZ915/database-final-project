@@ -195,6 +195,15 @@ a {
   object-position: center;
 }
 
+.card__actions {
+  padding: 1rem;
+  text-align: center;
+}
+
+.card__actions button,
+.card__actions a {
+  margin: 0 0.25rem;
+}
 
 /* nav bar */
 .logout__container {

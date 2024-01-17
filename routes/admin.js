@@ -21,4 +21,7 @@ router.post('/system-feeIn', adminController.postSystemfeeIn);
 router.get('/system-feeOut', adminController.getSystemfeeOut);
 router.post('/system-feeOut', adminController.postSystemfeeOut);
 
+router.get('/edit-product/:productId', isAuth, adminController.getEditProduct);
+router.post('/edit-product/:productId', isAuth, adminController.postEditProduct);
+
 module.exports = router;

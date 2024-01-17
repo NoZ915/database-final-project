@@ -27,7 +27,7 @@ exports.getServiceType = (req, res, next) => {
 
 //拆單商品
 exports.getBinProducts = (req, res, next) => {
-  Product.find({ service: "system-bin" })
+  Product.find({ service: "bin" })
     .then(products => {
       res.render("shop/all-bin", {
         prods: products,
@@ -66,7 +66,7 @@ exports.getBinProduct = (req, res, next) => {
 
 //團購商品
 exports.getShareProducts = (req, res, next) => {
-  Product.find({ service: "system-share" })
+  Product.find({ service: "share" })
     .then(products => {
       res.render("shop/all-share", {
         prods: products,
@@ -105,7 +105,7 @@ exports.getShareProduct = (req, res, next) => {
 
 //國內平台商品
 exports.getFeeInProducts = (req, res, next) => {
-  Product.find({ service: "system-feeIn" })
+  Product.find({ service: "feeIn" })
     .then(products => {
       res.render("shop/all-feeIn", {
         prods: products,
@@ -144,7 +144,7 @@ exports.getFeeInProduct = (req, res, next) => {
 
 //海外平台商品
 exports.getFeeOutProducts = (req, res, next) => {
-  Product.find({ service: "system-feeOut" })
+  Product.find({ service: "feeOut" })
     .then(products => {
       res.render("shop/all-feeOut", {
         prods: products,

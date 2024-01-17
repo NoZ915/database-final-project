@@ -44,7 +44,10 @@
                 </span>
               </div>
               <span>
-                <%= product.targetQuantity %>
+                <span class="big-title">目標數量</span>
+                <span class="sub-title">
+                  <%= product.targetQuantity %>
+                </span>
               </span>
 
               <%- include('../includes/add-to-cart.ejs', {product: product}) %>

@@ -36,7 +36,8 @@ const userSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: "Product",
         required: true
-      }
+      },
+      _id: false
     }]
   },
   cart: {
@@ -101,6 +102,18 @@ userSchema.methods.removeFromCart = function (productId) {
 userSchema.methods.clearCart = function () {
   this.cart = { items: [] }
   return this.save();
+}
+
+userSchema.methods.addToPost = function (product) {
+  const updatedPostItems = [...this.post.items];
+  updatedPostItems.push({
+    productId: product._id
+  })
+
+  const updatedPost = { items: updatedPostItems };
+  this.post = updatedPost;
+
+  this.save();
 }
 
 module.exports = mongoose.model('User', userSchema);
