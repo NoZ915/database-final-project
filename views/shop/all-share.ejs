@@ -3,10 +3,10 @@
   </head>
 
   <body>
-    <%- include('../includes/navigation.ejs') %>
+    <%- include('../includes/navigation.ejs', { isAuthenticated: isAuthenticated }) %>
 
       <!--小標 -->
-      <div Class="smalltitle">首頁 > 團購 > 所有商品</div>
+      <div Class="smalltitle">首頁 > 團購服務</div>
 
       <section>
         <h2 class="section-title" id="all">所有商品</h2>

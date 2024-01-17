@@ -194,3 +194,21 @@ a {
   object-fit: cover;
   object-position: center;
 }
+
+
+/* nav bar */
+.logout__container {
+  display: inline-block;
+}
+
+.avatar__container {
+  display: inline-block;
+}
+
+.logout-btn {
+  border: 1px rgb(0, 0, 0) solid;
+  border-radius: 2px;
+  background-color: #fff;
+  padding: 5px 10px;
+  cursor: pointer;
+}

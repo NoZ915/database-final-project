@@ -8,7 +8,7 @@
       <main class="centered">
         <div class="product__container">
           <div class="card__image">
-            <img src="<%= product.imageUrl %>" alt="<%= product.title %>">
+            <img src="/img/fee/<%= product.platform %>.jpg" alt="<%= product.title %>">
           </div>
 
           <div class="content__container">
@@ -17,7 +17,7 @@
             </h1>
             <hr>
             <h2>
-              NT$ <%= product.price %>
+              目標金額NT$ <%= product.targetAmount %>
             </h2>
             <div>
               <span class="big-title">截止日期</span>
@@ -28,7 +28,17 @@
             <div>
               <span class="big-title">商品描述</span>
               <span class="sub-title">
-                <%= product.description %>
+                <p>
+                  <%= product.description %>
+                </p>
+              </span>
+            </div>
+            <div>
+              <span class="big-title">商品網站</span>
+              <span class="sub-title">
+                <a href="<%= product.website %>">
+                  <%= product.website %>
+                </a>
               </span>
             </div>
             <span>

@@ -1,0 +1,18 @@
+<%- include('../includes/head.ejs') %>
+  <link rel="stylesheet" href="/css/system-type.css">
+  </head>
+
+  <body>
+    <%- include('../includes/navigation.ejs', { isAuthenticated: isAuthenticated }) %>
+
+      <!--小標 -->
+      <div Class="smalltitle">首頁 > 運費平攤</div>
+
+      <div class="container">
+        <a href="/all-feeIn" class="circle"><span>國內平台</span></a>
+        <a href="/all-feeOut" class="circle"><span>海外平台</span></a>
+      </div>
+      <!-- <%- include('../includes/footer.ejs') %> -->
+  </body>
+
+  </html>

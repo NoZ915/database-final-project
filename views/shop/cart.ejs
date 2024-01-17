@@ -1,0 +1,40 @@
+<%- include('../includes/head.ejs') %>
+  <link rel="stylesheet" href="/css/index.css">
+  </head>
+
+  <body>
+    <%- include('../includes/navigation.ejs', { isAuthenticated: isAuthenticated }) %>
+
+      <main>
+        <% if (products.length> 0) { %>
+          <ul class="cart__item-list">
+            <% products.forEach(p=> { %>
+              <li class="cart__item">
+                <h1>
+                  商品名稱：<%= p.productId.title %>
+                </h1>
+                <h2>數量: <%= p.quantity %>
+                </h2>
+                <form action="/cart-delete-item" method="POST">
+                  <input type="hidden" value="<%= p.productId._id %>" name="productId">
+                  <button class="btn danger" type="submit">移除購物車</button>
+                </form>
+              </li>
+              <% }) %>
+          </ul>
+          <hr>
+          <div class="centered">
+            <form action="/create-order" method="POST">
+              <button type="submit" class="btn">送出訂單</button>
+            </form>
+          </div>
+
+          <% } else { %>
+            <h1>購物車目前是空的！</h1>
+            <% } %>
+      </main>
+
+      <!-- <%- include('../includes/footer.ejs') %> -->
+  </body>
+
+  </html>

@@ -3,7 +3,11 @@
   </head>
 
   <body>
-    <%- include('../includes/navigation.ejs') %>
+    <%- include('../includes/navigation.ejs', { isAuthenticated: isAuthenticated }) %>
+
+      <!--小標 -->
+      <div Class="smalltitle"><a href="/">首頁</a> > 發單系統</div>
+
       <div class="container">
         <a href="/system-fee" class="circle"><span>運費平攤</span></a>
         <a href="/system-bin" class="circle"><span>拆單服務</span></a>

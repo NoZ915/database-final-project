@@ -20,13 +20,13 @@ const productSchema = new Schema({
   },
   imageUrl: {
     type: String,
-    required: true
+    required: false
   },
   deadline: {
     type: String,
     required: true
   },
-  plateform: {
+  platform: {
     type: String,
     required: false
   },
@@ -42,11 +42,11 @@ const productSchema = new Schema({
     type: Number,
     required: false
   },
-  // userId: {
-  //   type: Schema.Types.ObjectId,
-  //   ref: "User",
-  //   required: true
-  // }
+  userId: {
+    type: Schema.Types.ObjectId,
+    ref: "User",
+    required: true
+  }
 })
 
 module.exports = mongoose.model('Product', productSchema);
