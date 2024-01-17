@@ -70,6 +70,27 @@
           </section>
           <section>
             <span>訂單清單</span>
+            <div class="order-content">
+              <% if (orders.length <=0) { %>
+                <h1>目前還未有訂單</h1>
+                <% } else { %>
+                  <ul class="orders">
+                    <% orders.forEach(order=> { %>
+                      <li class="orders__item">
+                        <h1>訂單編號 # <%= order._id %>
+                        </h1>
+                        <ul class="orders__products">
+                          <% order.products.forEach(p=> { %>
+                            <li class="orders__products-item">
+                              商品名稱：<%= p.product.title %> (數量：<%= p.quantity %>)
+                            </li>
+                            <% }); %>
+                        </ul>
+                      </li>
+                      <% }); %>
+                  </ul>
+                  <% } %>
+            </div>
           </section>
         </div>
       </main>
