@@ -7,37 +7,50 @@
 
       <main class="centered">
         <div class="product__container">
-          <div class="card__image">
-            <img src="<%= product.imageUrl %>" alt="<%= product.title %>">
-          </div>
-
-          <div class="content__container">
-            <h1>
-              <%= product.title %>
-            </h1>
-            <hr>
-            <h2>
-              NT$ <%= product.price %>
-            </h2>
-            <div>
-              <span class="big-title">截止日期</span>
-              <span class="sub-title">
-                <%= product.deadline %>
+          <section>
+            <div class="user__container">
+              <img class="avatar" src="<%= userData.avatar %>" alt="使用者頭像">
+              <span>
+                <%= userData.nickname %>
+              </span>
+              <span>
+                <%= userData.residence %>
               </span>
             </div>
-            <div>
-              <span class="big-title">商品描述</span>
-              <span class="sub-title">
-                <%= product.description %>
-              </span>
+            <div class="card__image">
+              <img src="<%= product.imageUrl %>" alt="<%= product.title %>">
             </div>
-            <span>
-              <%= product.targetQuantity %>
-            </span>
+          </section>
 
-            <%- include('../includes/add-to-cart.ejs', {product: product}) %>
+          <section>
+            <div class="content__container">
+              <h1>
+                <%= product.title %>
+              </h1>
+              <hr>
+              <h2>
+                NT$ <%= product.price %>
+              </h2>
+              <div>
+                <span class="big-title">截止日期</span>
+                <span class="sub-title">
+                  <%= product.deadline %>
+                </span>
+              </div>
+              <div>
+                <span class="big-title">商品描述</span>
+                <span class="sub-title">
+                  <%= product.description %>
+                </span>
+              </div>
+              <span>
+                <%= product.targetQuantity %>
+              </span>
 
-          </div>
+              <%- include('../includes/add-to-cart.ejs', {product: product}) %>
+
+            </div>
+          </section>
         </div>
       </main>
 

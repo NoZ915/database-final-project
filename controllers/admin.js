@@ -42,6 +42,7 @@ exports.postSystemBin = (req, res, next) => {
   const deadline = req.body.deadline;
   const price = req.body.price;
   const targetQuantity = req.body.targetQuatity;
+  const userId = req.user._id;
   const product = new Product({
     service: service,
     imageUrl: imageUrl,
@@ -50,7 +51,8 @@ exports.postSystemBin = (req, res, next) => {
     description: description,
     deadline: deadline,
     price: price,
-    targetQuantity: targetQuantity
+    targetQuantity: targetQuantity,
+    userId: userId
   })
   product
     .save()
@@ -88,6 +90,7 @@ exports.postSystemShare = (req, res, next) => {
   const deadline = req.body.deadline;
   const price = req.body.price;
   const targetQuantity = req.body.targetQuatity;
+  const userId = req.user._id;
   const product = new Product({
     service: service,
     imageUrl: imageUrl,
@@ -96,7 +99,8 @@ exports.postSystemShare = (req, res, next) => {
     description: description,
     deadline: deadline,
     price: price,
-    targetQuantity: targetQuantity
+    targetQuantity: targetQuantity,
+    userId: userId
   })
   product
     .save()
@@ -133,6 +137,7 @@ exports.postSystemfeeIn = (req, res, next) => {
   const description = req.body.description;
   const deadline = req.body.deadline;
   const targetAmount = req.body.targetAmount;
+  const userId = req.user._id;
   const product = new Product({
     service: service,
     platform: platform,
@@ -140,7 +145,8 @@ exports.postSystemfeeIn = (req, res, next) => {
     website: website,
     description: description,
     deadline: deadline,
-    targetAmount: targetAmount
+    targetAmount: targetAmount,
+    userId: userId
   })
   product
     .save()
@@ -177,6 +183,7 @@ exports.postSystemfeeOut = (req, res, next) => {
   const description = req.body.description;
   const deadline = req.body.deadline;
   const targetAmount = req.body.targetAmount;
+  const userId = req.user._id;
   const product = new Product({
     service: service,
     platform: platform,
@@ -184,7 +191,8 @@ exports.postSystemfeeOut = (req, res, next) => {
     website: website,
     description: description,
     deadline: deadline,
-    targetAmount: targetAmount
+    targetAmount: targetAmount,
+    userId: userId
   })
   product
     .save()

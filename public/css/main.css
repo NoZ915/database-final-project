@@ -212,3 +212,15 @@ a {
   padding: 5px 10px;
   cursor: pointer;
 }
+
+.avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+.avatar-small {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+}

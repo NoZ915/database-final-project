@@ -7,47 +7,60 @@
 
       <main class="centered">
         <div class="product__container">
-          <div class="card__image">
-            <img src="/img/fee/<%= product.platform %>.jpg" alt="<%= product.title %>">
-          </div>
-
-          <div class="content__container">
-            <h1>
-              <%= product.title %>
-            </h1>
-            <hr>
-            <h2>
-              目標金額NT$ <%= product.targetAmount %>
-            </h2>
-            <div>
-              <span class="big-title">截止日期</span>
-              <span class="sub-title">
-                <%= product.deadline %>
+          <section>
+            <div class="user__container">
+              <img class="avatar" src="<%= userData.avatar %>" alt="使用者頭像">
+              <span>
+                <%= userData.nickname %>
+              </span>
+              <span>
+                <%= userData.residence %>
               </span>
             </div>
-            <div>
-              <span class="big-title">商品描述</span>
-              <span class="sub-title">
-                <p>
-                  <%= product.description %>
-                </p>
-              </span>
+            <div class="card__image">
+              <img src="/img/fee/<%= product.platform %>.jpg" alt="<%= product.title %>">
             </div>
-            <div>
-              <span class="big-title">商品網站</span>
-              <span class="sub-title">
-                <a href="<%= product.website %>">
-                  <%= product.website %>
-                </a>
+          </section>
+
+          <section>
+            <div class="content__container">
+              <h1>
+                <%= product.title %>
+              </h1>
+              <hr>
+              <h2>
+                目標金額NT$ <%= product.targetAmount %>
+              </h2>
+              <div>
+                <span class="big-title">截止日期</span>
+                <span class="sub-title">
+                  <%= product.deadline %>
+                </span>
+              </div>
+              <div>
+                <span class="big-title">商品描述</span>
+                <span class="sub-title">
+                  <p>
+                    <%= product.description %>
+                  </p>
+                </span>
+              </div>
+              <div>
+                <span class="big-title">商品網站</span>
+                <span class="sub-title">
+                  <a href="<%= product.website %>">
+                    <%= product.website %>
+                  </a>
+                </span>
+              </div>
+              <span>
+                <%= product.targetQuantity %>
               </span>
+
+              <%- include('../includes/add-to-cart.ejs', {product: product}) %>
+
             </div>
-            <span>
-              <%= product.targetQuantity %>
-            </span>
-
-            <%- include('../includes/add-to-cart.ejs', {product: product}) %>
-
-          </div>
+          </section>
         </div>
       </main>
 

@@ -20,6 +20,7 @@ const store = new MongoDBStore({
 const adminRoutes = require('./routes/admin');
 const shopRoutes = require('./routes/shop');
 const authRoutes = require('./routes/auth');
+const userRoutes = require('./routes/user');
 
 app.set("view engine", "ejs");
 app.set("views", "views");
@@ -50,6 +51,7 @@ app.use((req, res, next) => {
 app.use(adminRoutes);
 app.use(shopRoutes);
 app.use(authRoutes);
+app.use(userRoutes);
 
 mongoose.connect(MONGODB_URI)
   .then(result => {

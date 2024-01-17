@@ -1,4 +1,5 @@
 const Product = require("../models/product");
+const User = require("../models/user");
 
 exports.getIndex = (req, res, next) => {
   res.render("shop/index", {
@@ -44,12 +45,19 @@ exports.getBinProduct = (req, res, next) => {
   const prodId = req.params.productId;
   Product.findById(prodId)
     .then(product => {
-      res.render("shop/product-detail", {
-        product: product,
-        pageTitle: product.title,
-        isAuthenticated: req.session.isLoggedIn,
-        user: req.user
-      })
+      const userId = product.userId;
+      return Promise.all([product, User.findById(userId)]);
+    })
+    .then(([product, userData]) => {
+      if (userData) {
+        res.render("shop/product-detail", {
+          product: product,
+          pageTitle: product.title,
+          isAuthenticated: req.session.isLoggedIn,
+          user: req.user,
+          userData: userData
+        })
+      }
     })
     .catch(err => {
       console.log(err);
@@ -76,12 +84,19 @@ exports.getShareProduct = (req, res, next) => {
   const prodId = req.params.productId;
   Product.findById(prodId)
     .then(product => {
-      res.render("shop/product-detail", {
-        product: product,
-        pageTitle: product.title,
-        isAuthenticated: req.session.isLoggedIn,
-        user: req.user
-      })
+      const userId = product.userId;
+      return Promise.all([product, User.findById(userId)]);
+    })
+    .then(([product, userData]) => {
+      if (userData) {
+        res.render("shop/product-detail", {
+          product: product,
+          pageTitle: product.title,
+          isAuthenticated: req.session.isLoggedIn,
+          user: req.user,
+          userData: userData
+        })
+      }
     })
     .catch(err => {
       console.log(err);
@@ -108,12 +123,19 @@ exports.getFeeInProduct = (req, res, next) => {
   const prodId = req.params.productId;
   Product.findById(prodId)
     .then(product => {
-      res.render("shop/product-detail-fee", {
-        product: product,
-        pageTitle: product.title,
-        isAuthenticated: req.session.isLoggedIn,
-        user: req.user
-      })
+      const userId = product.userId;
+      return Promise.all([product, User.findById(userId)]);
+    })
+    .then(([product, userData]) => {
+      if (userData) {
+        res.render("shop/product-detail-fee", {
+          product: product,
+          pageTitle: product.title,
+          isAuthenticated: req.session.isLoggedIn,
+          user: req.user,
+          userData: userData
+        })
+      }
     })
     .catch(err => {
       console.log(err);
@@ -140,12 +162,19 @@ exports.getFeeOutProduct = (req, res, next) => {
   const prodId = req.params.productId;
   Product.findById(prodId)
     .then(product => {
-      res.render("shop/product-detail-fee", {
-        product: product,
-        pageTitle: product.title,
-        isAuthenticated: req.session.isLoggedIn,
-        user: req.user
-      })
+      const userId = product.userId;
+      return Promise.all([product, User.findById(userId)]);
+    })
+    .then(([product, userData]) => {
+      if (userData) {
+        res.render("shop/product-detail-fee", {
+          product: product,
+          pageTitle: product.title,
+          isAuthenticated: req.session.isLoggedIn,
+          user: req.user,
+          userData: userData
+        })
+      }
     })
     .catch(err => {
       console.log(err);

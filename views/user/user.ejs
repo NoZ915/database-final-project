@@ -1,0 +1,36 @@
+<%- include('../includes/head.ejs') %>
+  <link rel="stylesheet" href="/css/index.css">
+  </head>
+
+  <body>
+    <%- include('../includes/navigation.ejs', { isAuthenticated: isAuthenticated }) %>
+
+      <main>
+        <div class="user__container">
+          <div>
+            <img src="<%= user.avatar %>" alt="使用者的頭貼">
+            <div>
+              <span>會員ID：<%=user._id %></span>
+              <span>
+                <%= user.nickname %>
+              </span>
+              <span>
+                <%= user.name %>
+              </span>
+            </div>
+          </div>
+          <div>
+            <span>信箱：<%= user.email %></span>
+            <span>居住地：<%= user.residence %></span>
+          </div>
+        </div>
+
+        <div class="list__container">
+
+        </div>
+      </main>
+
+      <!-- <%- include('../includes/footer.ejs') %> -->
+  </body>
+
+  </html>
