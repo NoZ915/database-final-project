@@ -3,6 +3,7 @@
   <link rel="stylesheet" href="/css/user.css">
   <link rel="stylesheet" href="/css/orders.css">
 
+
   </head>
 
   <body>
@@ -59,9 +60,9 @@
 
                           <div class="card__actions">
                             <a href="/edit-product/<%=  product.productId._id.toString() %>?edit=true"
-                              class="btn">編輯</a>
-                            <form action="/delet-product">
-                              <button class="btn" type="submit">刪除</button>
+                              class="btn-edit">編輯</a>
+                            <form class="btn-delete-form" action="/delet-product" method="post">
+                              <button class="btn-delete" type="submit">刪除</button>
                               <input type="hidden" value="<%= product.productId._id.toString() %>" name="productId">
                             </form>
                           </div>

@@ -271,3 +271,19 @@ exports.postOrder = (req, res, next) => {
 //       console.log(err);
 //     });
 // };
+
+//移除發布
+exports.postDeletePostProduct = (req, res, next) => {
+  const prodId = req.body.productId;
+  req.user
+    .removeFromPost(prodId)
+    .then(result => {
+      Product.findByIdAndDelete(prodId)
+    })
+    .then(result => {
+      res.redirect("/user")
+    })
+    .catch(err => {
+      console.log(err)
+    })
+}

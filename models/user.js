@@ -99,6 +99,14 @@ userSchema.methods.removeFromCart = function (productId) {
   return this.save();
 }
 
+userSchema.methods.removeFromPost = function (productId) {
+  const updatedPostItems = this.post.items.filter(item => {
+    return item.productId.toString() !== productId.toString();
+  })
+  this.post.items = updatedPostItems;
+  return this.save();
+}
+
 userSchema.methods.clearCart = function () {
   this.cart = { items: [] }
   return this.save();

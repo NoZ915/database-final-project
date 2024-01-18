@@ -40,3 +40,55 @@ main {
 section>span {
   font-size: 22px;
 }
+
+.btn-edit {
+  display: inline-block;
+  line-height: 0px;
+  height: 40px;
+  padding: 12px;
+  font-size: 18px;
+  color: #e74c3c;
+  background-color: #fff;
+  border: 2px solid #e74c3c;
+  border-radius: 8px;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: background-color;
+}
+
+.btn-delete {
+  display: inline-block;
+  line-height: 0px;
+  height: 40px;
+  padding: 12px;
+  font-size: 18px;
+  color: #ffffff;
+  background-color: #e74c3c;
+  border: 2px solid #d64535;
+  border-radius: 8px;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: background-color;
+}
+
+.btn-edit,
+.btn-delete-form {
+  display: flex;
+  align-items: center;
+}
+
+.btn-delete:hover {
+  background-color: #d64535;
+  color: #fff;
+}
+
+.btn-edit:hover {
+  background-color: rgb(214, 69, 53);
+  color: #fff;
+}
+
+.card__actions {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+}
