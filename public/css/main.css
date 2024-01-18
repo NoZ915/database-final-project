@@ -299,7 +299,8 @@ footer {
 
 .user-message {
   margin: auto;
-  width: 90%;
+  width: 500px;
+  line-height: 50px;
   border: 1px solid #4771fa;
   padding: 0.5rem;
   border-radius: 3px;
@@ -308,6 +309,7 @@ footer {
 }
 
 .user-message--error {
+  margin-top: 30px;
   border-color: red;
   background: rgb(255, 176, 176);
   color: red;
