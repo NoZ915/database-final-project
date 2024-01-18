@@ -2,10 +2,17 @@ const User = require("../models/user");
 const bcrypt = require("bcryptjs");
 
 exports.getLogin = (req, res, next) => {
+  let message = req.flash("error");
+  if(message.length > 0){
+    message = message[0]
+  }else{
+    message = null;
+  }
   res.render("auth/login", {
     pageTitle: "登入",
     user: req.user,
-    isAuthenticated: req.session.isLoggedIn
+    isAuthenticated: req.session.isLoggedIn,
+    errorMessage: message
   });
 }
 
@@ -66,7 +73,7 @@ exports.postLogin = (req, res, next) => {
   User.findOne({ email: email })
     .then(user => {
       if (!user) {
-        // req.flash("error", "invalid email or password");
+        req.flash("error", "信箱錯誤");
         // return res.redirect("/login");
         return req.session.save(err => {
           res.redirect('/login');
@@ -82,7 +89,7 @@ exports.postLogin = (req, res, next) => {
               res.redirect("/");
             })
           }
-          // req.flash("error", "invalid email or password");
+          req.flash("error", "密碼錯誤");
           res.redirect("/login")
         })
         .catch(err => {
