@@ -34,27 +34,27 @@
               <input type="hidden" name="platform" id="platform">
               <div>
                 <label for="title">店家名稱</label>
-                <input type="text" name="title" id="title" value="<% if (editing) { %><%= product.title %><% } %>">
+                <input type="text" name="title" id="title" value="<% if (editing) { %><%= product.title %><% } %>" required="required">
               </div>
               <div>
                 <label for="website">店家網站</label>
                 <input type="text" name="website" id="website"
-                  value="<% if (editing) { %><%= product.website %><% } %>">
+                  value="<% if (editing) { %><%= product.website %><% } %>" required="required">
               </div>
               <div>
                 <label for="description">商品描述</label>
                 <input type="text" name="description" id="description"
-                  value="<% if (editing) { %><%= product.description %><% } %>">
+                  value="<% if (editing) { %><%= product.description %><% } %>" required="required">
               </div>
               <div>
                 <label for="deadline">截止日期 (年/月/日)</label>
                 <input type="text" name="deadline" id="deadline"
-                  value="<% if (editing) { %><%= product.deadline %><% } %>">
+                  value="<% if (editing) { %><%= product.deadline %><% } %>" required="required">
               </div>
               <div>
                 <label for="targetAmount">目標金額</label>
                 <input type="text" name="targetAmount" id="targetAmount"
-                  value="<% if (editing) { %><%= product.targetAmount %><% } %>">
+                  value="<% if (editing) { %><%= product.targetAmount %><% } %>" required="required">
               </div>
 
               <div class="btn__container">

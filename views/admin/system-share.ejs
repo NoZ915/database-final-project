@@ -20,34 +20,34 @@
             <div>
               <label for="imageUrl">商品圖片</label>
               <input type="text" name="imageUrl" id="imageUrl"
-                value="<% if (editing) { %><%= product.imageUrl %><% } %>">
+                value="<% if (editing) { %><%= product.imageUrl %><% } %>" required="required">
             </div>
             <div>
               <label for="title">商品名稱</label>
-              <input type="text" name="title" id="title" value="<% if (editing) { %><%= product.title %><% } %>">
+              <input type="text" name="title" id="title" value="<% if (editing) { %><%= product.title %><% } %>" required="required">
             </div>
             <div>
               <label for="website">商品網站</label>
-              <input type="text" name="website" id="website" value="<% if (editing) { %><%= product.website %><% } %>">
+              <input type="text" name="website" id="website" value="<% if (editing) { %><%= product.website %><% } %>" required="required">
             </div>
             <div>
               <label for="description">商品描述</label>
               <input type="text" name="description" id="description"
-                value="<% if (editing) { %><%= product.description %><% } %>">
+                value="<% if (editing) { %><%= product.description %><% } %>" required="required">
             </div>
             <div>
               <label for="deadline">截止日期 (年/月/日)</label>
               <input type="text" name="deadline" id="deadline"
-                value="<% if (editing) { %><%= product.deadline %><% } %>">
+                value="<% if (editing) { %><%= product.deadline %><% } %>" required="required">
             </div>
             <div>
               <label for="price">商品價格</label>
-              <input type="text" name="price" id="price" value="<% if (editing) { %><%= product.price %><% } %>">
+              <input type="text" name="price" id="price" value="<% if (editing) { %><%= product.price %><% } %>" required="required">
             </div>
             <div>
               <label for="targetQuantity">目標數量</label>
               <input type="text" name="targetQuantity" id="targetQuantity"
-                value="<% if (editing) { %><%= product.targetQuantity %><% } %>">
+                value="<% if (editing) { %><%= product.targetQuantity %><% } %>" required="required">
             </div>
 
             <div class="btn__container">
