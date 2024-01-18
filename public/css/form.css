@@ -1,0 +1,83 @@
+.system-form {
+  display: flex;
+  flex-direction: column;
+
+  max-width: 500px;
+  font-size: 18px;
+  margin: 0 auto;
+  margin-top: 40px;
+}
+
+label {
+  display: block;
+  margin: 10px 0;
+}
+
+input {
+  display: inline-block;
+  width: 500px;
+  padding: 1%;
+  border: none;
+  border-bottom: 2px #000 solid;
+  box-sizing: border-box;
+  outline: none;
+  /* 移除默認的外框 */
+  font-size: 18px;
+}
+
+input:hover {
+  border: none;
+  border-bottom: 2px #0056b3 solid;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 10px;
+  line-height: 0px;
+  height: 40px;
+  padding: 12px;
+  font-size: 18px;
+  color: #ffffff;
+  background-color: #e74c3c;
+  border: 2px solid #000;
+  border-radius: 8px;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: background-color;
+
+  margin: 20px auto;
+  width: 450px;
+
+}
+
+.btn:hover {
+  background-color: rgb(214, 69, 53);
+  color: #fff;
+}
+
+.btn-logout,
+.btn-login {
+  display: inline-block;
+  width: 100px;
+}
+
+.btn__container {
+  margin: 0 auto;
+}
+
+select {
+  display: flex;
+  justify-content: center;
+  margin: 1% 0;
+  width: 450px;
+  /* 使選擇框寬度佔滿父容器 */
+  padding: 4px 15px;
+  font-size: 18px;
+  font-weight: bold;
+  border: 1px solid #eee;
+  height: 50px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: #ebebeb;
+}

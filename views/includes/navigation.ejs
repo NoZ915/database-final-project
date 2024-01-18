@@ -2,45 +2,47 @@
   <div class="logo">
     <a href="/"><img id="logo-img" src="/img/logo.png" /></a>
   </div>
-  <ul id="top-menu">
-    <li>
-      <% if(!isAuthenticated){ %>
-        <a href="/login">
-          <img class="small" src="/img/user.png" />
-        </a>
-        <% }else{ %>
-          <form class="logout__container" action="/logout" method="post">
-            <button class="logout-btn" type="submit">登出</button>
-          </form>
-          <a class="avatar__container" href="/user">
-            <img class="avatar-small" src="<%= user.avatar %>" />
+  <div class="menu">
+    <ul id="top-menu">
+      <li>
+        <% if(!isAuthenticated){ %>
+          <a href="/login">
+            <img class="small" src="/img/user.png" />
           </a>
-          <% } %>
-    </li>
-    <li><a href="chat.html"><img class="small" src="/img/chat.png" /></a>
-    </li>
-    <li><a href="love.html"><img class="small" src="/img/like.png" /></a>
-    </li>
-    <li><a href=""><img class="small" src="/img/search.png" /></a>
-    </li>
-  </ul>
-  <div class="clearfix"></div>
-  <ul id="mid-menu">
-    <li class="dropdown">
-      <a href="/service-type">服務分類</a>
-      <ul class="dropdown-content">
-        <li><a href="/fee-platform">運費平攤</a></li>
-        <li><a href="/all-bin">拆單</a></li>
-        <li><a href="/all-share">團購</a></li>
-      </ul>
-    </li>
-    <li><a href="/system-type">發單系統</a>
-    </li>
-    <li><a href="/cart">我要併！</a>
-    </li>
-    <li><a href="/form">回饋意見</a>
-    </li>
-  </ul>
+          <% }else{ %>
+            <form class="logout__container" action="/logout" method="post">
+              <button class="logout-btn" type="submit">登出</button>
+            </form>
+            <a class="avatar__container" href="/user">
+              <img class="avatar-small small" src="<%= user.avatar %>" />
+            </a>
+            <% } %>
+      </li>
+      <li><a href="chat.html"><img class="small" src="/img/chat.png" /></a>
+      </li>
+      <li><a href="love.html"><img class="small" src="/img/like.png" /></a>
+      </li>
+      <li><a href=""><img class="small" src="/img/search.png" /></a>
+      </li>
+    </ul>
+    <div class="clearfix"></div>
+    <ul id="mid-menu">
+      <li class="dropdown">
+        <a href="/service-type">服務分類</a>
+        <ul class="dropdown-content">
+          <li><a href="/fee-platform">運費平攤</a></li>
+          <li><a href="/all-bin">拆單</a></li>
+          <li><a href="/all-share">團購</a></li>
+        </ul>
+      </li>
+      <li><a href="/system-type">發單系統</a>
+      </li>
+      <li><a href="/cart">我要併！</a>
+      </li>
+      <li><a href="/form">回饋意見</a>
+      </li>
+    </ul>
+  </div>
 </div>
 <!-- <input type="text" name="myText" size="20"> -->
 <div class="line"></div>

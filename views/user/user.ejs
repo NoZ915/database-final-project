@@ -1,5 +1,8 @@
 <%- include('../includes/head.ejs') %>
   <link rel="stylesheet" href="/css/all-system.css">
+  <link rel="stylesheet" href="/css/user.css">
+  <link rel="stylesheet" href="/css/orders.css">
+
   </head>
 
   <body>
@@ -7,21 +10,25 @@
 
       <main>
         <div class="user__container">
-          <div>
-            <img src="<%= user.avatar %>" alt="使用者的頭貼">
+          <div class="user-content">
+            <img class="user-avatar" src="<%= user.avatar %>" alt="使用者的頭貼">
             <div>
-              <span>會員ID：<%=user._id %></span>
-              <span>
-                <%= user.nickname %>
-              </span>
+              <span class="user-id">會員ID：<%=user._id.toString().substr(-10) %></span>
               <span>
                 <%= user.name %>
               </span>
+              <span>
+                <%= user.nickname %>
+              </span>
             </div>
           </div>
-          <div>
-            <span>信箱：<%= user.email %></span>
-            <span>居住地：<%= user.residence %></span>
+          <div class="detail-content">
+            <span>
+              <%= user.email %>
+            </span>
+            <span>
+              <%= user.residence %>
+            </span>
           </div>
         </div>
 
@@ -95,7 +102,7 @@
         </div>
       </main>
 
-      <!-- <%- include('../includes/footer.ejs') %> -->
+      <%- include('../includes/footer.ejs') %>
   </body>
 
   </html>

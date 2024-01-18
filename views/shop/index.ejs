@@ -1,5 +1,6 @@
 <%- include('../includes/head.ejs') %>
     <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/all-system.css">
     </head>
 
     <body>
@@ -9,22 +10,58 @@
                     <img class="image" id="" src="/img/banner.jpg" />
                 </div>
 
-                <div class="content">
-                    <div class="left-content">
-                        <h2>創作理念</h2>
-                        <p>
-                            一個讓使用者可以快速找到人一起免運、併單、團購的平台</p>
-                    </div>
-                    <div class="right-content">
-                        <p>
-                            運費太貴?商品太多?團購優惠? 讓我們一同共享購物的樂趣。
-                            在這裡，每個人都是購物的夥伴！
-                        </p>
-                    </div>
-                </div>
+                <div class="shop-content">
+                    <% if (prods.length> 0) { %>
+                        <div class="grid">
+                            <% for (let product of prods) { %>
+                                <a href="/all-bin/<%= product._id %>" class="btn">
+                                    <article class="card product-item">
+                                        <header class="card__header">
+                                            <h1 class="product__title">
+                                                <%= product.title %>
+                                            </h1>
+                                        </header>
+                                        <div class="card__image">
+                                            <img src="<% if(product.imageUrl){ %><%= product.imageUrl %><% }else{ %>/img/fee/<%= product.platform %>.jpg<% } %>"
+                                                alt="<%= product.title %>">
+                                        </div>
+                                        <div class="card__content">
+                                            <h2 class="product__price">
+                                                NT$ <% if(product.price){ %>
+                                                    <%= product.price %>
+                                                        <% }else{ %>
+                                                            <%= product.targetAmount %>
+                                                                <% } %>
+                                            </h2>
+                                            <p class="product__deadline">
+                                                截止日期 <%= product.deadline %>
+                                            </p>
+                                        </div>
+                                    </article>
+                                </a>
+                                <% } %>
+                        </div>
+                        <% } else { %>
+                            <h1>目前沒有商品上架！</h1>
+                            <% } %>
 
-                <div class="up">
-                    <a href="#"><img id="up-icon" src="img/up.png" /></a>
+                                <div class="content">
+                                    <div class="left-content">
+                                        <h2>創作理念</h2>
+                                        <p>
+                                            一個讓使用者可以快速找到人一起免運、併單、團購的平台</p>
+                                    </div>
+                                    <div class="right-content">
+                                        <p>
+                                            運費太貴?商品太多?團購優惠? 讓我們一同共享購物的樂趣。
+                                            在這裡，每個人都是購物的夥伴！
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <!-- <div class="up">
+                                    <a href="#"><img id="up-icon" src="img/up.png" /></a>
+                                </div> -->
                 </div>
             </div>
             <%- include('../includes/footer.ejs') %>

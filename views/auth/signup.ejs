@@ -1,11 +1,12 @@
 <%- include('../includes/head.ejs') %>
   <link rel="stylesheet" href="/css/index.css">
+  <link rel="stylesheet" href="/css/form.css">
   </head>
 
   <body>
     <%- include('../includes/navigation.ejs', { isAuthenticated: isAuthenticated }) %>
       <main>
-        <form class="login-form" action="/signup" method="POST">
+        <form class="system-form" action="/signup" method="POST">
           <div class="form-control">
             <label for="email">電子信箱</label>
             <input type="email" name="email" id="email">
@@ -30,10 +31,13 @@
             <label for="avatar">頭貼</label>
             <input type="text" name="avatar" id="avatar">
           </div>
-          <button class="btn" type="submit">註冊</button>
+          <div class="btn__container">
+            <button class="btn" type="submit">註冊</button>
+          </div>
+
         </form>
       </main>
-      <!-- <%- include('../includes/footer.ejs') %> -->
+      <%- include('../includes/footer.ejs') %>
   </body>
 
   </html>

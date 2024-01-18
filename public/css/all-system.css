@@ -25,3 +25,23 @@
 .product__deadline {
   text-align: center;
 }
+
+section {
+  margin: 0 auto;
+  max-width: 1140px;
+}
+
+.title-content {
+  margin: 0 auto;
+  margin-top: 30px;
+  max-width: 1140px;
+}
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+main {
+  min-height: 1140px;
+}

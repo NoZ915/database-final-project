@@ -9,17 +9,17 @@ const isAuth = require("../middleware/is-auth");
 router.get('/system-type', adminController.getSystemType);
 router.get('/system-fee', adminController.getSystemFee);
 
-router.get('/system-bin', adminController.getSystemBin);
-router.post('/system-bin', adminController.postSystemBin);
+router.get('/system-bin', isAuth, adminController.getSystemBin);
+router.post('/system-bin', isAuth, adminController.postSystemBin);
 
-router.get('/system-share', adminController.getSystemShare);
-router.post('/system-share', adminController.postSystemShare);
+router.get('/system-share', isAuth, adminController.getSystemShare);
+router.post('/system-share', isAuth, adminController.postSystemShare);
 
-router.get('/system-feeIn', adminController.getSystemfeeIn);
-router.post('/system-feeIn', adminController.postSystemfeeIn);
+router.get('/system-feeIn', isAuth, adminController.getSystemfeeIn);
+router.post('/system-feeIn', isAuth, adminController.postSystemfeeIn);
 
-router.get('/system-feeOut', adminController.getSystemfeeOut);
-router.post('/system-feeOut', adminController.postSystemfeeOut);
+router.get('/system-feeOut', isAuth, adminController.getSystemfeeOut);
+router.post('/system-feeOut', isAuth, adminController.postSystemfeeOut);
 
 router.get('/edit-product/:productId', isAuth, adminController.getEditProduct);
 router.post('/edit-product/:productId', isAuth, adminController.postEditProduct);

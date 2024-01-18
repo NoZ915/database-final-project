@@ -8,10 +8,7 @@ const MongoDBStore = require("connect-mongodb-session")(session);
 
 const User = require('./models/user');
 
-const MONGODB_URI = "mongodb+srv://noz915:noz915@cluster0.1btczck.mongodb.net/shop?retryWrites=true&w=majority";
-
-// const MONGODB_URI = "mongodb://localhost:27017/"
-
+const MONGODB_URI = "mongodb+srv://noz915:noz915@cluster0.1btczck.mongodb.net/shop?retryWrites=true";
 
 const app = express();
 

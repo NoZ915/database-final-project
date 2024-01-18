@@ -1,5 +1,6 @@
 <%- include('../includes/head.ejs') %>
   <link rel="stylesheet" href="/css/index.css">
+  <link rel="stylesheet" href="/css/form.css">
   </head>
 
   <body>
@@ -9,7 +10,7 @@
       <div Class="smalltitle">首頁 > 會員登入</div>
 
       <main>
-        <form class="login-form" action="/login" method="POST">
+        <form class="system-form" action="/login" method="POST">
           <div class="form-control">
             <label for="email">電子信箱</label>
             <input type="email" name="email" id="email">
@@ -18,11 +19,14 @@
             <label for="password">密碼</label>
             <input type="password" name="password" id="password">
           </div>
-          <button class="btn" type="submit">登入</button>
-          <button class="btn" type="button" onclick="location.href=('/signup')">註冊</button>
+          <div class="btn__container">
+            <button class="btn btn-login" type="submit">登入</button>
+            <button class="btn btn-logout" type="button" onclick="location.href=('/signup')">註冊</button>
+          </div>
+
         </form>
       </main>
-      <!-- <%- include('../includes/footer.ejs') %> -->
+      <%- include('../includes/footer.ejs') %>
   </body>
 
   </html>

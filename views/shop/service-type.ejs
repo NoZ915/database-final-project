@@ -1,19 +1,24 @@
 <%- include('../includes/head.ejs') %>
+  <link rel="stylesheet" href="/css/all-system.css">
   <link rel="stylesheet" href="/css/system-type.css">
   </head>
 
   <body>
     <%- include('../includes/navigation.ejs', { isAuthenticated: isAuthenticated }) %>
+      <main>
+        <div class="title-content">
+          <!--小標 -->
+          <div class="smalltitle">首頁 > 服務分類</div>
+        </div>
 
-      <!--小標 -->
-      <div Class="smalltitle">首頁 > 發單系統</div>
+        <div class="container">
+          <a href="/fee-platform" class="circle"><span>運費平攤</span></a>
+          <a href="/all-bin" class="circle"><span>拆單服務</span></a>
+          <a href="/all-share" class="circle"><span>團購服務</span></a>
+        </div>
+      </main>
 
-      <div class="container">
-        <a href="/fee-platform" class="circle"><span>運費平攤</span></a>
-        <a href="/all-bin" class="circle"><span>拆單服務</span></a>
-        <a href="/all-share" class="circle"><span>團購服務</span></a>
-      </div>
-      <!-- <%- include('../includes/footer.ejs') %> -->
+      <%- include('../includes/footer.ejs') %>
   </body>
 
   </html>

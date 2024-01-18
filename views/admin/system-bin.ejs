@@ -1,22 +1,21 @@
 <%- include('../includes/head.ejs') %>
+  <link rel="stylesheet" href="/css/all-system.css">
+
   <link rel="stylesheet" href="/css/system.css">
+  <link rel="stylesheet" href="/css/form.css">
   </head>
 
   <body>
     <%- include('../includes/navigation.ejs', { isAuthenticated: isAuthenticated }) %>
 
-      <!--小標 -->
-      <div Class="smalltitle">首頁 > 發單系統 > 拆單</div>
-
       <main>
+        <div class="title-content">
+          <!--小標 -->
+          <div Class="smalltitle">首頁 > 發單系統 > 拆單</div>
+        </div>
         <div class="container">
-          <!-- <div class="drop-zone">
-            <span class="drop-zone__prompt">Drop file here or click to upload</span>
-            <input type="file" name="myFile" class="drop-zone__input">
-          </div> -->
-
-          <form action="/<% if (editing) { %>edit-product/<%= product._id %><% } else { %>system-bin<% } %>"
-            method="POST">
+          <form class="system-form"
+            action="/<% if (editing) { %>edit-product/<%= product._id %><% } else { %>system-bin<% } %>" method="POST">
             <input type="hidden" name="service" id="service" value="bin">
             <div>
               <label for="imageUrl">商品圖片</label>
@@ -50,15 +49,17 @@
               <input type="text" name="targetQuantity" id="targetQuantity"
                 value="<% if (editing) { %><%= product.targetQuantity %><% } %>">
             </div>
+            <div class="btn__container">
+              <button class="btn" type="submit">
+                <% if (editing) { %>更新<% } else { %>發文<% } %>
+              </button>
+            </div>
 
-            <button class="btn" type="submit">
-              <% if (editing) { %>更新<% } else { %>發文<% } %>
-            </button>
           </form>
+        </div>
       </main>
-      </div>
 
-      <!-- <%- include('../includes/footer.ejs') %> -->
+      <%- include('../includes/footer.ejs') %>
   </body>
 
   </html>

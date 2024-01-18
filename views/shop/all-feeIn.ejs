@@ -4,46 +4,50 @@
 
   <body>
     <%- include('../includes/navigation.ejs', { isAuthenticated: isAuthenticated }) %>
-
-      <!--小標 -->
-      <div Class="smalltitle">首頁 > 運費平攤 > 國內平台</div>
-
-      <section>
-        <h2 class="section-title" id="all">所有商品</h2>
-
-        <div class="shop-content">
-          <% if (prods.length> 0) { %>
-            <div class="grid">
-              <% for (let product of prods) { %>
-                <a href="/all-feeIn/<%= product._id %>" class="btn">
-                  <article class="card product-item">
-                    <header class="card__header">
-                      <h1 class="product__title">
-                        <%= product.title %>
-                      </h1>
-                    </header>
-                    <div class="card__image">
-                      <img src="/img/fee/<%= product.platform %>.jpg" alt="<%= product.title %>">
-                    </div>
-                    <div class="card__content">
-                      <h2 class="product__price">
-                        NT$ <%= product.targetAmount %>
-                      </h2>
-                      <p class="product__deadline">
-                        截止日期 <%= product.deadline %>
-                      </p>
-                    </div>
-                  </article>
-                </a>
-                <% } %>
-            </div>
-            <% } else { %>
-              <h1>目前沒有國內平台商品上架！</h1>
-              <% } %>
+      <main>
+        <div class="title-content">
+          <div Class="smalltitle">首頁 > 運費平攤 > 國內平台</div>
+          <h2 class="section-title" id="all">所有商品</h2>
         </div>
-      </section>
+        <!--小標 -->
 
-      <!-- <%- include('../includes/footer.ejs') %> -->
+
+        <section>
+
+          <div class="shop-content">
+            <% if (prods.length> 0) { %>
+              <div class="grid">
+                <% for (let product of prods) { %>
+                  <a href="/all-feeIn/<%= product._id %>" class="btn">
+                    <article class="card product-item">
+                      <header class="card__header">
+                        <h1 class="product__title">
+                          <%= product.title %>
+                        </h1>
+                      </header>
+                      <div class="card__image">
+                        <img src="/img/fee/<%= product.platform %>.jpg" alt="<%= product.title %>">
+                      </div>
+                      <div class="card__content">
+                        <h2 class="product__price">
+                          NT$ <%= product.targetAmount %>
+                        </h2>
+                        <p class="product__deadline">
+                          截止日期 <%= product.deadline %>
+                        </p>
+                      </div>
+                    </article>
+                  </a>
+                  <% } %>
+              </div>
+              <% } else { %>
+                <h1>目前沒有國內平台商品上架！</h1>
+                <% } %>
+          </div>
+        </section>
+      </main>
+
+      <%- include('../includes/footer.ejs') %>
   </body>
 
   </html>

@@ -1,0 +1,42 @@
+main {
+  display: flex;
+  max-width: 1140px;
+  margin: 30px auto;
+}
+
+.user__container {
+  border-right: 2px solid #000;
+  padding: 0 30px;
+}
+
+.user__container span {
+  display: block;
+  margin-top: 8px;
+  font-size: 22px;
+}
+
+.user-avatar {
+  width: 200px;
+  border-radius: 50%;
+  border: 2px solid #cacaca;
+}
+
+.user-id {
+  color: rgb(33, 123, 184);
+}
+
+.list__container {
+  padding: 0 30px;
+}
+
+.grid {
+  justify-content: center;
+}
+
+.grid a {
+  margin: 5px;
+}
+
+section>span {
+  font-size: 22px;
+}

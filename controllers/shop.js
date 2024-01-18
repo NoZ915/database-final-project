@@ -3,11 +3,16 @@ const User = require("../models/user");
 const Order = require("../models/order");
 
 exports.getIndex = (req, res, next) => {
-  res.render("shop/index", {
-    pageTitle: "首頁",
-    isAuthenticated: req.session.isLoggedIn,
-    user: req.user
-  });
+  Product.find()
+    .then(products => {
+      console.log(products)
+      res.render("shop/index", {
+        pageTitle: "首頁",
+        prods: products,
+        isAuthenticated: req.session.isLoggedIn,
+        user: req.user
+      });
+    })
 }
 
 exports.getFeePlatform = (req, res, next) => {
