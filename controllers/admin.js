@@ -19,6 +19,12 @@ exports.getSystemFee = (req, res, next) => {
 // system bin-上架拆單商品
 exports.getSystemBin = (req, res, next) => {
   const editMode = req.query.edit;
+  let message = req.flash("error");
+  if(message.length > 0){
+    message = message[0]
+  }else{
+    message = null;
+  }
   Product.find()
     .then(products => {
       res.render("admin/system-bin", {
@@ -27,7 +33,8 @@ exports.getSystemBin = (req, res, next) => {
         path: "/system-bin",
         isAuthenticated: req.session.isLoggedIn,
         user: req.user,
-        editing: editMode
+        editing: editMode,
+        errorMessage: message
       });
     })
     .catch(err => {
