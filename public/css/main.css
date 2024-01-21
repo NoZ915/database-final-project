@@ -9,8 +9,7 @@ main {
 }
 
 h1 {
-  max-width: 450px;
-  margin: 0 auto;
+  text-align: center;
 }
 
 /*整體排版+導覽列*/
