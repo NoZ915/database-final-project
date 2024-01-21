@@ -41,8 +41,7 @@
                 <% console.log(prods) %>
                   <div class="grid">
                     <% for (let product of prods) { %>
-                      <a href="/all-<%= product.productId.service %>/<%= product.productId._id.toString() %>"
-                        class="btn">
+                      <a href="/all-<%= product.productId.service %>/<%= product.productId._id %>" class="btn">
                         <article class="card product-item">
                           <header class="card__header">
                             <h1 class="product__title">
